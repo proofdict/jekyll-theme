@@ -1,29 +1,35 @@
-# minima
+# jekyll-theme for proofdict
 
-*Minima is a one-size-fits-all Jekyll theme for writers*. It's Jekyll's default (and first) theme. It's what you get when you run `jekyll new`.
-
-[Theme preview](https://jekyll.github.io/minima/)
-
-![minima theme preview](/screenshot.png)
+![preview](/screenshot.png)
 
 ## Installation
 
-Add this line to your Jekyll site's Gemfile:
+Use with [Jekyll Remote Theme](https://github.com/benbalter/jekyll-remote-theme "Jekyll Remote Theme")
 
-```ruby
-gem "minima"
-```
+1. Add the following to your Gemfile
 
-And add this line to your Jekyll site:
+  ```ruby
+  gem "jekyll-remote-theme"
+  ```
 
-```yaml
-theme: minima
-```
+  and run `bundle install` to install the plugin
 
-And then execute:
+2. Add the following to your site's `_config.yml` to activate the plugin
 
-    $ bundle
+  ```yml
+  plugins:
+    - jekyll-remote-theme
+  ```
 
+3. Add the following to your site's `_config.yml` to choose your theme
+
+  ```yml
+  remote_theme: proofdict/jekyll-theme
+  ```
+
+-----
+
+It is based on [minima](https://jekyll.github.io/minima/)
 
 ## Contents At-A-Glance
 
@@ -63,10 +69,6 @@ Refers to various asset files within the `assets` directory.
 Contains the `main.scss` that imports sass files from within the `_sass` directory. This `main.scss` is what gets processed into the theme's main stylesheet `main.css` called by `_layouts/default.html` via `_includes/head.html`.
 
 This directory can include sub-directories to manage assets of similar type, and will be copied over as is, to the final transformed site directory.
-
-### Plugins
-
-Minima comes with [`jekyll-seo-tag`](https://github.com/jekyll/jekyll-seo-tag) plugin preinstalled to make sure your website gets the most useful meta tags. See [usage](https://github.com/jekyll/jekyll-seo-tag#usage) to know how to set it up.
 
 ## Usage
 
