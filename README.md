@@ -10,6 +10,7 @@ Use with [Jekyll Remote Theme](https://github.com/benbalter/jekyll-remote-theme 
 
   ```ruby
   gem "jekyll-remote-theme"
+  gem "jekyll-seo-tag" # dependency
   ```
 
   and run `bundle install` to install the plugin
@@ -18,6 +19,7 @@ Use with [Jekyll Remote Theme](https://github.com/benbalter/jekyll-remote-theme 
 
   ```yml
   plugins:
+    - jekyll-seo-tag
     - jekyll-remote-theme
   ```
 
