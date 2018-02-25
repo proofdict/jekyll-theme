@@ -1,4 +1,4 @@
-# jekyll-theme for proofdict
+# jekyll-theme for proofdict [![Build Status](https://travis-ci.org/proofdict/jekyll-theme.svg?branch=master)](https://travis-ci.org/proofdict/jekyll-theme)
 
 ![preview](/screenshot.png)
 
