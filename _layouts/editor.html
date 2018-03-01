@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: " en" }}">
+
+{% include head.html %}
+
+<body>
+
+{% include header.html %}
+
+<div class="editor">
+  {% if site.github %}
+  {% capture editorURL
+  %}https://proofdict.github.io/editor/?owner={{site.github.owner_name}}&repo={{repository_name}}&branch={{site.github.source.branch}}{%
+  endcapture %}
+  <!-- https://help.github.com/articles/repository-metadata-on-github-pages/ -->
+  <iframe
+    src="{{editorURL}}"
+    width="100%"
+    height="100%"
+    frameborder="0"
+    class="editor-frame"
+  ></iframe>
+  {% else %}
+  <p>Need to `site.github` config.</p>
+  {% endif %}
+  <footer class="editor-footer">
+    <a href="{{editorURL}}" title="Proofdict Editor">Open editor</a>
+  </footer>
+</div>
+
+{% include footer.html %}
+
+</body>
+
+</html>
