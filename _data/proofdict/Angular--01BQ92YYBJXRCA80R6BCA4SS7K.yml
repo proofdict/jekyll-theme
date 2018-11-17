@@ -9,6 +9,8 @@ specs:
   # different term
   - from: angulardart
     to: angulardart
+allows:
+  - AngularJS
 tags:
   - noun
   - JavaScript

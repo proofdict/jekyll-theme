@@ -17,12 +17,17 @@ layout: default
   {% assign proofdict = proofdict_hash[1] %}
   {% if site.github %}
   {% capture editURL %}{{ site.github.repository_url }}/edit/{{site.github.source.branch}}{{site.github.source.path}}_data/proofdict/{{dictFileName}}.yml {% endcapture %}
+  {% capture editorURL
+  %}https://proofdict.github.io/editor/?owner={{site.github.owner_name}}&repo={{site.github.repository_name}}&branch={{site.github.source.branch}}&dictionaryContent={{proofdict | jsonify | uri_escape}}{% endcapture %}
   {% endif %}
   <div class="proofdict">
     {% if proofdict.id %}
     <h2 id="{{ proofdict.id }}" class="proofdict-title">{{proofdict.expected}}{% if editURL %}
-    <a href="{{editURL}}" title="Edit the dict on GitHub" class="proofdict-edit">
-      <span class="icon icon-pencil">{% include icon-pencil.svg %}</span>
+    <a href="{{editURL}}" title="Edit the dict on GitHub" class="proofdict-edit" target="_blank">
+      <i class="fas fa-pen fa-xs"></i>
+    </a>
+    <a href="{{editorURL}}" title="View dictionary on Editor" class="proofdict-edit" target="_blank">
+      <i class="fas fa-external-link-alt fa-xs"></i>
     </a>
     {% endif %}</h2>
     {% else %}
@@ -58,6 +63,18 @@ layout: default
         {% endfor %}
       </table>
     </div>
+    {% if proofdict.allows.size > 0 %}
+    <div class="proofdict-allows">
+      <h3>Allows</h3>
+      <ul>
+        {% for allow in proofdict.allows %}
+        <li>
+          <code>{{allow}}</code>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
     {% if proofdict.specs.size > 0 %}
     <div class="proofdict-examples">
       <h3>Examples</h3>
