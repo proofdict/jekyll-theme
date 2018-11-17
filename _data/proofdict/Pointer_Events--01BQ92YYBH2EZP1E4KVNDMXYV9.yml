@@ -14,3 +14,5 @@ specs:
 tags:
   - JavaScript
   - noun
+allows:
+  - '{{COMBINATION_WORD}}'
