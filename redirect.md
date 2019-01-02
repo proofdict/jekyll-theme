@@ -4,9 +4,11 @@ layout: redirect
 
 # Redirecting…
 
-Redirecting you to the appropriate playground.
-
 If the redirect doesn’t work, <a href="javascript:history.back()">go back</a>.
+
+- API: `https://${owner}.github.io/proof-dictionary/dictionary.json`
+- Editor: `https://${owner}.github.io/proof-dictionary/editor/`
+- Dictionary: `https://${owner}.github.io/proof-dictionary`
 
 <script>
 const match = /^https:\/\/github\.com\/(\w+)\//.exec(
