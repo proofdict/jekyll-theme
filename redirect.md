@@ -1,5 +1,6 @@
 ---
 layout: redirect
+permalink: /redirect/
 ---
 
 # Redirecting…
