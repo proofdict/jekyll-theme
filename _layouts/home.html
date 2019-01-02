@@ -16,7 +16,8 @@ layout: default
   {% assign dictFileName = proofdict_hash[0] %}
   {% assign proofdict = proofdict_hash[1] %}
   {% if site.github %}
-  {% capture editURL %}{{ site.github.repository_url }}/edit/{{site.github.source.branch}}{{site.github.source.path}}_data/proofdict/{{dictFileName}}.yml {% endcapture %}
+  <!-- Jekyll can not get file name -->
+  {% capture editURL %}{{ site.github.repository_url }}/search?q={{proofdict.id}} {% endcapture %}
   {% capture editorURL
   %}https://proofdict.github.io/editor/?owner={{site.github.owner_name}}&repo={{site.github.repository_name}}&branch={{site.github.source.branch}}&dictionaryContent={{proofdict | jsonify | uri_escape}}{% endcapture %}
   {% endif %}
@@ -24,10 +25,10 @@ layout: default
     {% if proofdict.id %}
     <h2 id="{{ proofdict.id }}" class="proofdict-title">{{proofdict.expected}}{% if editURL %}
     <a href="{{editURL}}" title="Edit the dict on GitHub" class="proofdict-edit" target="_blank">
-      <i class="fas fa-pen fa-xs"></i>
+      <i class="fas fa-search fa-xs"></i>
     </a>
     <a href="{{editorURL}}" title="View dictionary on Editor" class="proofdict-edit" target="_blank">
-      <i class="fas fa-external-link-alt fa-xs"></i>
+      <i class="fas fa-pen fa-xs"></i>
     </a>
     {% endif %}</h2>
     {% else %}
